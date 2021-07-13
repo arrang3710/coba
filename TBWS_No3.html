@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Penginputan KRS</title>
+</head>
+<body>
+	
+ <script type="text/javascript">
+var s = [];
+var lagi = true;
+var tambah=0;
+var tambah1= true;
+var matkul =  [matakuliah1 = {
+		kode : "WS01",
+		namaMK : "Web science",
+		sks : 2,
+		tahun : 2020,
+		},matakuliah2 = {
+		kode : "MD01",
+		namaMK : "Matematika Dasar",
+		sks : 3,
+		tahun : 2020,
+		},matakuliah3 = {
+		kode : "AP01",
+		namaMK : "Algoritma & Pemrograman",
+		sks : 3,
+		tahun : 2020,
+		},matakuliah4 = {
+		kode : "AI01",
+		namaMK : "Agama Islam",
+		sks : 2,
+		tahun : 2020,
+		},matakuliah5 = {
+		kode : "PC01",
+		namaMK : "Pengolahan Citra",
+		sks : 3,
+		tahun : 2020,
+		},]
+var matpel = [];
+for (var k=0;k < matkul.length;k++) {
+	matpel[k] = [" NamaMK : "+matkul[k].namaMK,"  kode : "+matkul[k].kode,
+	"  SKS : "+matkul[k].sks,"  Tahun : "+matkul[k].tahun]}
+while (lagi) {
+	var login =prompt("Masuk sebagai\n1.Admin\n2.Mahasiswa");
+	switch (login) {
+		case '1': 
+		alert("Selamat Datang Admin");
+		while (tambah1) {
+		tambah = prompt("\n1.Tambah matakuliah\n2.Hapus Matakuliah ");
+		if (tambah=='1') {
+		matkul.push( a = {
+		kode : prompt("kode : "),
+		namaMK :prompt("Nama matakuliah :"),
+		sks : prompt("jumlah SKS : "),
+		tahun : prompt("Tahun : "),
+		});}
+		else if (tambah=='2') {
+		matkul.splice(prompt('Pilih nomor matakuliah yang akan di hapus\n1.'+matpel[0]+
+		'\n2.'+matpel[1]+'\n3.'+matpel[2]+'\n4.'+matpel[3]+'\n5.'+matpel[4])-1,1);
+		}
+		tambah1 = confirm("Tambah atau Hapus Matakuliah lagi ?");
+	}
+	break;
+		case '2':	
+var Mahasiswa = {
+nama : prompt('Nama :'),
+nim : prompt('NIM :'),
+semester :prompt("Semester :"),
+ipk	: prompt("IPK :"),
+jurusan : prompt("Jurusan :"),
+kelas	: prompt("Kelas :"),
+totalSKS	: 22,
+matakuliah : this.matkul,
+}
+document.write("<table >")
+document.write("<tr><td>Nama <td>: <td>"+Mahasiswa.nama);
+document.write("<tr><td>NIM   <td>: <td>"+Mahasiswa.nim);
+document.write("<tr><td>Semester  <td>:<td> "+Mahasiswa.semester);
+document.write("<tr><td>IPK   <td>:<td> "+Mahasiswa.ipk);
+document.write("<tr><td>Kelas   <td>:<td> "+Mahasiswa.kelas+"</tr>"+"<br>");
+document.write("</table >")
+document.write("<table border='1'>")
+document.write("<tr><td><center>Nama Matakuliah<td>Kode Matakuliah<td>Jumlah SKS<td>Tahun</tr>")
+
+var mapel = [];
+for (var i=0;i < Mahasiswa.matakuliah.length;i++) {
+	mapel[i] = prompt([i+1+"."+" NamaMK : "+Mahasiswa.matakuliah[i].namaMK,"  kode : "+Mahasiswa.matakuliah[i].kode,
+	"  SKS : "+Mahasiswa.matakuliah[i].sks,"  Tahun : "+Mahasiswa.matakuliah[i].tahun,
+	"\n\n=>Ketik y jika anda ingin menambahkan matakuliah ini ke KRS anda\n=>Ketik x jika anda tidak ingn menambahkannnya"])
+
+if (mapel[i]== "y") {
+	document.write( "<tr> <td>"+Mahasiswa.matakuliah[i].namaMK,"<td><center>"+Mahasiswa.matakuliah[i].kode,
+	"<td><center> "+Mahasiswa.matakuliah[i].sks,"<td><center>"+Mahasiswa.matakuliah[i].tahun+"</tr>")}
+}
+document.write("</table>")
+break;
+}
+lagi = confirm("Masuk ke program Penginputan Krs lagi ?");
+}
+
+server.listen(4003, () => {
+    // Console will print the message
+    console.log('Server running at https://152.67.115.246:4004');
+ });
+</script>
+
+</body>
+</html>
